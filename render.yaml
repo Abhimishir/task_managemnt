@@ -18,8 +18,7 @@ services:
         fromDatabase:
           name: task-db
           property: password
-      - key: SPRING_JPA_DATABASE_PLATFORM
-        value: org.hibernate.dialect.PostgreSQLDialect
+
       - key: SPRING_JPA_HIBERNATE_DDL_AUTO
         value: update
       - key: JWT_SECRET
