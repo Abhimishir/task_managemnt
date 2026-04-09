@@ -6,23 +6,28 @@ services:
     envVars:
       - key: PORT
         value: 8080
-      - key: SPRING_DATASOURCE_URL
-        value: jdbc:postgresql://${task-db.host}:${task-db.port}/${task-db.database}
-      - key: SPRING_DATASOURCE_DRIVER
-        value: org.postgresql.Driver
-      - key: SPRING_DATASOURCE_USERNAME
+      - key: DB_HOST
+        fromDatabase:
+          name: task-db
+          property: host
+      - key: DB_PORT
+        fromDatabase:
+          name: task-db
+          property: port
+      - key: DB_NAME
+        fromDatabase:
+          name: task-db
+          property: database
+      - key: DB_USER
         fromDatabase:
           name: task-db
           property: user
-      - key: SPRING_DATASOURCE_PASSWORD
+      - key: DB_PASSWORD
         fromDatabase:
           name: task-db
           property: password
-
-      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
-        value: update
       - key: JWT_SECRET
-        generateValue: true # Render will generate a random secret for you
+        generateValue: true
 
 databases:
   - name: task-db
