@@ -7,9 +7,7 @@ services:
       - key: PORT
         value: 8080
       - key: SPRING_DATASOURCE_URL
-        fromDatabase:
-          name: task-db
-          property: connectionString
+        value: jdbc:postgresql://${task-db.host}:${task-db.port}/${task-db.database}
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
           name: task-db
