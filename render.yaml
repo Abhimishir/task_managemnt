@@ -18,8 +18,6 @@ services:
         fromDatabase:
           name: task-db
           property: password
-      - key: SPRING_JPA_DATABASE_PLATFORM
-        value: org.hibernate.dialect.PostgreSQLDialect
       - key: JWT_SECRET
         generateValue: true # Render will generate a random secret for you
 
