@@ -1,0 +1,14 @@
+target/
+*.class
+*.iml
+.idea/
+.vscode/
+.git/
+.gitignore
+Dockerfile
+node_modules/
+.dockerignore
+HELP.md
+mvnw
+mvnw.cmd
+.mvn/
