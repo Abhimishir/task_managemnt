@@ -2,12 +2,6 @@ spring:
   application:
     name: task-management-system
 
-  datasource:
-    url: jdbc:postgresql://${DB_HOST:localhost}:${DB_PORT:5432}/${DB_NAME:taskdb}
-    driver-class-name: org.postgresql.Driver
-    username: ${DB_USER:sa}
-    password: ${DB_PASSWORD:}
-
   jpa:
     hibernate:
       ddl-auto: update
