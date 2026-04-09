@@ -8,6 +8,8 @@ services:
         value: 8080
       - key: SPRING_DATASOURCE_URL
         value: jdbc:postgresql://${task-db.host}:${task-db.port}/${task-db.database}
+      - key: SPRING_DATASOURCE_DRIVER
+        value: org.postgresql.Driver
       - key: SPRING_DATASOURCE_USERNAME
         fromDatabase:
           name: task-db
@@ -16,6 +18,10 @@ services:
         fromDatabase:
           name: task-db
           property: password
+      - key: SPRING_JPA_DATABASE_PLATFORM
+        value: org.hibernate.dialect.PostgreSQLDialect
+      - key: SPRING_JPA_HIBERNATE_DDL_AUTO
+        value: update
       - key: JWT_SECRET
         generateValue: true # Render will generate a random secret for you
 
